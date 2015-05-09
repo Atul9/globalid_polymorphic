@@ -1,0 +1,16 @@
+= simple_form_for @task, html: { class: 'form-horizontal'} do |f|
+  .fields
+    -#= f.text_field :name
+    .container
+      .row
+        .col-md-2
+          = f.input :name
+          -#= f.input :global_client, as: :grouped_select, collection: Company.distinct(:name), group_method: :array
+          -#= f.grouped_collection_select :global_client, [ Company, Individual], :all, :model_name, :to_global_id, :name
+          -#= collection_select(:name, options_from_collection_for_select(Company.all,:id, :name))
+          = f.grouped_collection_select :global_client, [ Company, Individual], :all, :model_name, :to_global_id, :name
+          %br
+          %br
+          = f.button :submit, class: 'btn btn-primary'
+
+

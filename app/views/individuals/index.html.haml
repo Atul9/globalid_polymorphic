@@ -1,0 +1,10 @@
+%table.table.table-bordered
+  %th Name
+  - @individuals.each do |f|
+    %tr
+      %td= f.name
+      %td
+        = link_to "Edit", edit_individual_path(f), class: 'btn btn-primary'
+        = link_to 'Delete', individual_path(f), method: :delete, class: 'btn btn-danger', data: {confirm:'Are you sure?'}
+= link_to "New Individual", new_individual_path, class: 'btn btn-primary'
+= link_to ' Home', root_path, class: 'btn btn-primary glyphicon glyphicon-home'
