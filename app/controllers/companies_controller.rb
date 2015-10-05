@@ -32,7 +32,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     Company.find(params[:id]).destroy
-    redirect_to companiess_path
+    redirect_to companies_path
   end
 
   private

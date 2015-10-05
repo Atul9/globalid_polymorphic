@@ -22,7 +22,7 @@ class IndividualsController < ApplicationController
 
   def update
     @individual = Individual.find(params[:id])
-    @individual.update_attributes(company_params)
+    @individual.update_attributes(individual_params)
     if @individual.save
       redirect_to individuals_path
     else
